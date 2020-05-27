@@ -1,0 +1,14 @@
+#calendar {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.main-calendar {
+    height: calc(100vh - 70px);
+    background: #fff;
+    padding: 2.75rem 2.25rem;
+    width: 100%;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+}
