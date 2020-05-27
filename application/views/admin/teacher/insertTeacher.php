@@ -31,6 +31,6 @@
             <option value="titular">titular</option>
             <option value="substituto">substituto</option>
         </select>
-        <button class="btn btn-primary space-top" type="submit">insert</button>
+        <button class="btn btn-primary space-top" type="submit">salvar</button>
     </form>
 </div>

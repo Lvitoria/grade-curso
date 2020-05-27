@@ -33,7 +33,7 @@
                     <option value="<?php echo $teacher->idteacher ?>"><?php echo $teacher->name ?></option>
                 <?php } ?>
             </select>
-            <button class="btn btn-primary space-top" type="submit">insert</button>
+            <button class="btn btn-primary space-top" type="submit">salvar</button>
         <?php else : ?>
             <div class="alert alert-danger" role="alert">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
