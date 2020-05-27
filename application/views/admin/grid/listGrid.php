@@ -30,6 +30,8 @@ if (isset($alert)) {
 						<div class="punch-view">
 							<span class="clr-green"><?php echo ucfirst($segunda->discipline) ?></span>
 							<br>
+							<span><?php  echo "Período: $segunda->classes"?></span>
+							<br>
 							<span style="font-size: .90em;">
 								<?php
 								echo "professor(a) $segunda->name é o $segunda->status da disciplina ";
@@ -62,6 +64,8 @@ if (isset($alert)) {
 						<div class="punch-view">
 							<span class="clr-green"><?php echo ucfirst($terca->discipline) ?></span>
 							<br>
+							<span><?php  echo "Período: $terca->classes"?></span>
+							<br>
 							<span style="font-size: .90em;">
 								<?php echo "professor(a) $terca->name é o $terca->status da disciplina " ?>
 							</span>
@@ -82,6 +86,8 @@ if (isset($alert)) {
 					<?php foreach ($quartas as $quarta) : ?>
 						<div class="punch-view">
 							<span class="clr-green"><?php echo ucfirst($quarta->discipline) ?></span>
+							<br>
+							<span><?php  echo "Período: $quarta->classes"?></span>
 							<br>
 							<span style="font-size: .90em;">
 								<?php echo "professor(a) $quarta->name é o $quarta->status da disciplina " ?>
@@ -104,6 +110,8 @@ if (isset($alert)) {
 						<div class="punch-view">
 							<span class="clr-green"><?php echo ucfirst($quinta->discipline) ?></span>
 							<br>
+							<span><?php  echo "Período: $quinta->classes"?></span>
+							<br>
 							<span style="font-size: .90em;">
 								<?php echo "professor(a) $quinta->name é o $quinta->status da disciplina " ?>
 							</span>
@@ -124,6 +132,8 @@ if (isset($alert)) {
 					<?php foreach ($sextas as $sexta) : ?>
 						<div class="punch-view">
 							<span class="clr-green"><?php echo ucfirst($sexta->discipline) ?></span>
+							<br>
+							<span><?php  echo "Período: $sexta->classes"?></span>
 							<br>
 							<span style="font-size: .90em;">
 								<?php echo "professor(a) $sexta->name é o $sexta->status da disciplina " ?>
@@ -146,6 +156,8 @@ if (isset($alert)) {
 					<?php foreach ($sabados as $sabado) : ?>
 						<div class="punch-view">
 							<span class="clr-green"><?php echo ucfirst($sabado->discipline) ?></span>
+							<br>
+							<span><?php  echo "Período: $sabado->classes"?></span>
 							<br>
 							<span style="font-size: .90em;">
 								<?php

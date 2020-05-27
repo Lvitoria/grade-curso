@@ -7,7 +7,7 @@ class week_model extends CI_Model
 
   public function getAllSegunda()
   {
-    $this->db->select('grid.*,teacher.*,discipline.name as discipline');
+    $this->db->select('grid.*,teacher.*,discipline.name as discipline, grid_has_discipline.classes');
     $this->db->from('teacher');
     $this->db->join('discipline', 'teacher.idteacher = discipline.teacher_idteacher');
     $this->db->join('grid_has_discipline', 'discipline.iddiscipline = grid_has_discipline.discipline_iddiscipline');
@@ -20,7 +20,7 @@ class week_model extends CI_Model
 
   public function getAllTerca()
   {
-    $this->db->select('grid.*,teacher.*,discipline.name as discipline');
+    $this->db->select('grid.*,teacher.*,discipline.name as discipline, grid_has_discipline.classes');
     $this->db->from('teacher');
     $this->db->join('discipline', 'teacher.idteacher = discipline.teacher_idteacher');
     $this->db->join('grid_has_discipline', 'discipline.iddiscipline = grid_has_discipline.discipline_iddiscipline');
@@ -33,7 +33,7 @@ class week_model extends CI_Model
 
   public function getAllQuarta()
   {
-    $this->db->select('grid.*,teacher.*,discipline.name as discipline');
+    $this->db->select('grid.*,teacher.*,discipline.name as discipline, grid_has_discipline.classes');
     $this->db->from('teacher');
     $this->db->join('discipline', 'teacher.idteacher = discipline.teacher_idteacher');
     $this->db->join('grid_has_discipline', 'discipline.iddiscipline = grid_has_discipline.discipline_iddiscipline');
@@ -45,7 +45,7 @@ class week_model extends CI_Model
   }
   public function getAllQuinta()
   {
-    $this->db->select('grid.*,teacher.*,discipline.name as discipline');
+    $this->db->select('grid.*,teacher.*,discipline.name as discipline, grid_has_discipline.classes');
     $this->db->from('teacher');
     $this->db->join('discipline', 'teacher.idteacher = discipline.teacher_idteacher');
     $this->db->join('grid_has_discipline', 'discipline.iddiscipline = grid_has_discipline.discipline_iddiscipline');
@@ -57,7 +57,7 @@ class week_model extends CI_Model
   }
   public function getAllSexta()
   {
-    $this->db->select('grid.*,teacher.*,discipline.name as discipline');
+    $this->db->select('grid.*,teacher.*,discipline.name as discipline, grid_has_discipline.classes');
     $this->db->from('teacher');
     $this->db->join('discipline', 'teacher.idteacher = discipline.teacher_idteacher');
     $this->db->join('grid_has_discipline', 'discipline.iddiscipline = grid_has_discipline.discipline_iddiscipline');
@@ -69,7 +69,7 @@ class week_model extends CI_Model
   }
   public function getAllSabado()
   {
-    $this->db->select('grid.*,teacher.*,discipline.name as discipline');
+    $this->db->select('grid.*,teacher.*,discipline.name as discipline, grid_has_discipline.classes');
     $this->db->from('teacher');
     $this->db->join('discipline', 'teacher.idteacher = discipline.teacher_idteacher');
     $this->db->join('grid_has_discipline', 'discipline.iddiscipline = grid_has_discipline.discipline_iddiscipline');
