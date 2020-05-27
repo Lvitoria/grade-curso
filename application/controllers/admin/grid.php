@@ -53,6 +53,7 @@ class Grid extends CI_Controller
       $discipline = strip_tags($this->input->post('discipline'));
       $grid = strip_tags($this->input->post('grid'));
       $period = strip_tags($this->input->post('period'));
+      $week =  $this->model->GetId('grid', 'idgrid', $grid);
 
       //verifica se ja não existe esta disciplina e esta grade
       $grid_discipline = $this->model->GetTwoId($tabela, 'discipline_iddiscipline', 'grid_idgrid', $discipline, $grid);
@@ -71,25 +72,26 @@ class Grid extends CI_Controller
         }
       }
 
-      //verifica quantas vezes esta disciplina já vai estar na semana
-      $disciplineResult =  $this->model->GetId('discipline', 'iddiscipline', $discipline);
-      if ($disciplineResult->classesWeek >= 4) {
-        $this->session->set_flashdata('danger', 'Desculpa, mas esta disciplina, já vai ser dada mais de três vezes na semana');
-        redirect('novo-grade');
+      //verifica quantas vezes esta disciplina já vai estar na semana, obs tirando os sabados fora
+      if ($week->week !== "sabado") {
+        $disciplineResult =  $this->model->GetId('discipline', 'iddiscipline', $discipline);
+        if ($disciplineResult->classesWeek >= 4) {
+          $this->session->set_flashdata('danger', 'Desculpa, mas esta disciplina, já vai ser dada mais de três vezes na semana');
+          redirect('novo-grade');
+        }
+        $disciplineResult->classesWeek = strval($disciplineResult->classesWeek + 1);
+        $this->model->updateForID('discipline', 'iddiscipline', $discipline, $disciplineResult);
       }
-      $disciplineResult->classesWeek = strval($disciplineResult->classesWeek + 1);
-      $this->model->updateForID('discipline', 'iddiscipline', $discipline, $disciplineResult);
-      
 
-      //verifica se tem o 4 periodos disponiveis 
-      $week =  $this->model->GetId('grid', 'idgrid', $grid);
+
+      //verifica se tem o 4 periodos disponiveis
       if ($week->period >= 4) {
         $this->session->set_flashdata('danger', 'este dia da semana já esta cheio');
         redirect('novo-grade');
       }
       $week->period = strval($week->period + 1);
       $this->model->updateForID('grid', 'idgrid', $grid, $week);
-      
+
       //insere na tabela
       $dados = array(
         'discipline_iddiscipline' => $discipline,
@@ -101,5 +103,4 @@ class Grid extends CI_Controller
       redirect('home');
     }
   }
-
 }
