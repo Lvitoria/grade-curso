@@ -30,12 +30,12 @@ if (isset($alert)) {
 						<div class="punch-view">
 							<span class="clr-green"><?php echo ucfirst($segunda->discipline) ?></span>
 							<br>
-							<span><?php  echo "Período: $segunda->classes"?></span>
+							<span><?php echo "Período: $segunda->classes" ?></span>
 							<br>
 							<span style="font-size: .90em;">
 								<?php
 								echo "professor(a) $segunda->name é o $segunda->status da disciplina ";
-								if ($segunda->holidayStart != "0000-00-00") {
+								if ($segunda->holidayStart !== "0000-00-00") {
 									echo "<br>";
 									echo "férias marcadas em:";
 									echo "<br>";
@@ -64,10 +64,21 @@ if (isset($alert)) {
 						<div class="punch-view">
 							<span class="clr-green"><?php echo ucfirst($terca->discipline) ?></span>
 							<br>
-							<span><?php  echo "Período: $terca->classes"?></span>
+							<span><?php echo "Período: $terca->classes" ?></span>
 							<br>
 							<span style="font-size: .90em;">
-								<?php echo "professor(a) $terca->name é o $terca->status da disciplina " ?>
+								<?php 
+								echo "professor(a) $terca->name é o $terca->status da disciplina ";
+								if ($terca->holidayStart !== "0000-00-00") {
+									echo "<br>";
+									echo "férias marcadas em:";
+									echo "<br>";
+									echo dataBR($terca->holidayStart);
+									echo " - ";
+									echo dataBR($terca->holidayEnd);
+									echo "<br>";
+									substitute($terca->idteacher);
+								} ?>
 							</span>
 
 						</div>
@@ -87,10 +98,21 @@ if (isset($alert)) {
 						<div class="punch-view">
 							<span class="clr-green"><?php echo ucfirst($quarta->discipline) ?></span>
 							<br>
-							<span><?php  echo "Período: $quarta->classes"?></span>
+							<span><?php echo "Período: $quarta->classes" ?></span>
 							<br>
 							<span style="font-size: .90em;">
-								<?php echo "professor(a) $quarta->name é o $quarta->status da disciplina " ?>
+								<?php 
+								echo "professor(a) $quarta->name é o $quarta->status da disciplina ";
+								if ($quarta->holidayStart !== "0000-00-00") {
+									echo "<br>";
+									echo "férias marcadas em:";
+									echo "<br>";
+									echo dataBR($quarta->holidayStart);
+									echo " - ";
+									echo dataBR($quarta->holidayEnd);
+									echo "<br>";
+									substitute($quarta->idteacher);
+								} ?>
 							</span>
 
 						</div>
@@ -110,10 +132,21 @@ if (isset($alert)) {
 						<div class="punch-view">
 							<span class="clr-green"><?php echo ucfirst($quinta->discipline) ?></span>
 							<br>
-							<span><?php  echo "Período: $quinta->classes"?></span>
+							<span><?php echo "Período: $quinta->classes" ?></span>
 							<br>
 							<span style="font-size: .90em;">
-								<?php echo "professor(a) $quinta->name é o $quinta->status da disciplina " ?>
+								<?php 
+								echo "professor(a) $quinta->name é o $quinta->status da disciplina ";
+								if ($quinta->holidayStart !== "0000-00-00") {
+									echo "<br>";
+									echo "férias marcadas em:";
+									echo "<br>";
+									echo dataBR($quinta->holidayStart);
+									echo " - ";
+									echo dataBR($quinta->holidayEnd);
+									echo "<br>";
+									substitute($quinta->idteacher);
+								} ?>
 							</span>
 
 						</div>
@@ -133,10 +166,21 @@ if (isset($alert)) {
 						<div class="punch-view">
 							<span class="clr-green"><?php echo ucfirst($sexta->discipline) ?></span>
 							<br>
-							<span><?php  echo "Período: $sexta->classes"?></span>
+							<span><?php echo "Período: $sexta->classes" ?></span>
 							<br>
 							<span style="font-size: .90em;">
-								<?php echo "professor(a) $sexta->name é o $sexta->status da disciplina " ?>
+								<?php
+								echo "professor(a) $sexta->name é o $sexta->status da disciplina ";
+								if ($sexta->holidayStart !== "0000-00-00") {
+									echo "<br>";
+									echo "férias marcadas em:";
+									echo "<br>";
+									echo dataBR($sexta->holidayStart);
+									echo " - ";
+									echo dataBR($sexta->holidayEnd);
+									echo "<br>";
+									substitute($sexta->idteacher);
+								} ?>
 							</span>
 
 						</div>
@@ -157,12 +201,21 @@ if (isset($alert)) {
 						<div class="punch-view">
 							<span class="clr-green"><?php echo ucfirst($sabado->discipline) ?></span>
 							<br>
-							<span><?php  echo "Período: $sabado->classes"?></span>
+							<span><?php echo "Período: $sabado->classes" ?></span>
 							<br>
 							<span style="font-size: .90em;">
 								<?php
 								echo "professor(a) $sabado->name é o $sabado->status da disciplina ";
-								?>
+								if ($sabado->holidayStart !== "0000-00-00") {
+									echo "<br>";
+									echo "férias marcadas em:";
+									echo "<br>";
+									echo dataBR($sabado->holidayStart);
+									echo " - ";
+									echo dataBR($sabado->holidayEnd);
+									echo "<br>";
+									substitute($sabado->idteacher);
+								} ?>
 							</span>
 						</div>
 					<?php endforeach ?>

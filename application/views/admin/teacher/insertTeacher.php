@@ -19,18 +19,29 @@
             <label for="exampleFormControlInput1">Nome</label>
             <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Fulano de tal">
         </div>
-        <div class="form-group">
-            <label for="startDate">inicio das férias</label>
+        <div class="form-group" id="btn">
+            <label for="startDate">Inicio das férias</label>
             <input type="date" name="startDate" class="form-control" id="startDate" placeholder="Fulano de tal">
-        </div>
-        <div class="form-group">
-            <label for="endDate">fim das férias</label>
+            <label for="endDate">Fim das férias</label>
             <input type="date" name="endDate" class="form-control" id="endDate" placeholder="Fulano de tal">
         </div>
-        <select class="form-control" id="exampleFormControlSelect1" name="status">
-            <option value="titular">titular</option>
-            <option value="substituto">substituto</option>
-        </select>
+        <div class="form-group" id="substitute">
+            <label for="substitute">Nome</label>
+            <input type="text" name="nameSubstitute" class="form-control" id="substitute" placeholder="Fulano de tal">
+            <small id="emailHelp" class="form-text text-muted">Nome do professor para substituir durante o periodo de férias</small>
+        </div>
         <button class="btn btn-primary space-top" type="submit">salvar</button>
     </form>
 </div>
+
+<script>
+$('#substitute').hide()  
+$('#btn').change(function(){
+      let inicio = $('#startDate').val(),  fim = $('#endDate').val();       
+        if(inicio && fim){
+            $('#substitute').show().attr('required', true)
+            $('#status').hide()
+        }
+       
+    })
+</script>

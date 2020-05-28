@@ -18,6 +18,7 @@ class Grid extends CI_Controller
 
   public function index()
   {
+    $this->load->helper('list_substitute_helper.php');
     $this->load->helper('data_br_helper.php');
     $dados['sabados'] =  $this->week->getAllSabado();
     $dados['sextas'] =  $this->week->getAllSexta();

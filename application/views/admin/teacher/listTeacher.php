@@ -26,6 +26,7 @@ if (isset($alert)) {
                     <th scope="col">Nome</th>
                     <th scope="col">Férias inicio</th>
                     <th scope="col">Férias fim</th>
+                    <th scope="col">Situação</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,6 +39,7 @@ if (isset($alert)) {
                         <td><?php echo $teacher->name ?></td>
                         <td><?php echo  $teacher->holidayStart != "0000-00-00" ? dataBR($teacher->holidayStart) : "férias não marcadas" ?></td>
                         <td><?php echo  $teacher->holidayEnd != "0000-00-00" ? dataBR($teacher->holidayEnd) : "férias não marcadas" ?></td>
+                        <td><?php echo $teacher->status ?></td>
                     </tr>
                 <?php } ?>
             </tbody>
