@@ -1,5 +1,5 @@
-**O banco de dados esta na pasta database** &nbsp;
-**e so colocar a pasta com tudo no htdocs e rodar e colocar esta url no navegador http://localhost/escola/** &nbsp;
-**usuario para logar**&nbsp;
-    login: diretor@hotmail.com&nbsp;
+1-**O banco de dados esta na pasta database**
+2-**e so colocar a pasta com tudo no htdocs e rodar e colocar esta url no navegador http://localhost/escola/** 
+3-**usuario para logar**
+    login: diretor@hotmail.com
     senha: 123
